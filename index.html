@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SA23 | Programming & Web Development</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- موزیک پس‌زمینه (سورس را خودت جایگزین کن) -->
+  <audio id="bg-music" autoplay loop>
+    <source src="YOUR_MUSIC_SOURCE.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- هدر اصلی سایت با استفاده از تصویر ارسالی -->
+  <header class="main-header">
+    <img src="23.png" alt="SA23 Theme" class="theme-image" />
+    <h1>گروه برنامه‌نویسی SA23</h1>
+    <p>فعال در زمینه طراحی و توسعه نرم‌افزارهای موبایل</p>
+  </header>
+
+  <!-- معرفی گروه -->
+  <section class="about">
+    <h2>درباره ما</h2>
+    <p>
+      SA23 یک گروه خلاق برنامه‌نویسی است که تمرکز اصلی آن بر طراحی و ساخت
+      اپلیکیشن‌های موبایل با رابط کاربری مدرن و عملکرد بالا می‌باشد.
+    </p>
+  </section>
+
+  <!-- محصول اول: قهرمان تو -->
+  <section class="app-section">
+    <div class="app-header">
+      <div class="logo-placeholder"><img src="logo.png"></div>
+      <h3>قهرمان تو</h3>
+    </div>
+    <div class="buttons">
+      <a href="http://cafebazaar.ir/app/com.SA1.hero"><button>دانلود از بازار</button></a>
+      <a href="https://myket.ir/app/com.SA1.hero"><button>دانلود از مایکت</button></a>
+    </div>
+  </section>
+
+  <!-- محصول دوم: پرتوی زمان -->
+  <section class="app-section">
+    <div class="app-header">
+      <div class="logo-placeholder"><img src="logo2.png"></div>
+      <h3>پرتوی زمان</h3>
+    </div>
+    <div class="buttons">
+      <a href="https://myket.ir/app/com.parto.Zaman"><button>دانلود از مایکت</button></a>
+    </div>
+  </section>
+
+  <!-- فوتر و دکمه‌ها -->
+  <footer>
+    <button onclick="openModal('creator')">درباره سازنده</button>
+    <button onclick="openModal('designer')">طراح سایت</button>
+  </footer>
+
+  <!-- مودال -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
