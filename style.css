@@ -1,102 +1,117 @@
 body {
   margin: 0;
-  font-family: Tahoma, sans-serif;
-  background: linear-gradient(270deg, #1a002b, #3a0066, #1a002b);
-  background-size: 600% 600%;
-  animation: bgMove 15s ease infinite;
-  color: #fff;
+  font-family: Tahoma;
+  background: linear-gradient(270deg,#12001f,#3b0764,#12001f);
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+  color: white;
 }
 
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes bg {
+  0%{background-position:0%}
+  50%{background-position:100%}
+  100%{background-position:0%}
 }
 
-.main-header {
+.hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
 }
 
-.theme-image {
-  max-width: 300px;
-  animation: glow 2s infinite alternate;
+.hero-logo {
+  width: 260px;
+  filter: drop-shadow(0 0 30px #c084fc);
 }
 
-@keyframes glow {
-  from { filter: drop-shadow(0 0 5px #a855f7); }
-  to { filter: drop-shadow(0 0 20px #d946ef); }
+.glow-text {
+  font-size: 3rem;
+  text-shadow: 0 0 20px #d946ef;
 }
 
-.about, .app-section {
-  margin: 40px auto;
+.section {
   max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+.app-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
   background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform .4s;
 }
 
-.app-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.app-card:hover {
+  transform: translateY(-10px) scale(1.02);
 }
 
-.logo-placeholder {
-  width: 250px;
-  height: 250px;
-  border: 2px;
+.logo-box {
+  width: 90px;
+  height: 90px;
+  border: 2px dashed #d946ef;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.buttons {
-  margin-top: 20px;
+.app-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-button {
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
   background: #7c3aed;
-  border: none;
+  border-radius: 12px;
+  text-decoration: none;
   color: white;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #c084fc;
+  box-shadow: 0 0 15px #a855f7;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #9333ea;
+  color: white;
+  margin: 10px;
 }
 
 .modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+  inset: 0;
+  background: rgba(0,0,0,.7);
 }
 
 .modal-content {
   background: #2a0040;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 300px;
+  padding: 25px;
   margin: 15% auto;
+  width: 300px;
+  border-radius: 15px;
   text-align: center;
 }
 
-.close {
+.music-control {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
   cursor: pointer;
-  float: left;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
 }
