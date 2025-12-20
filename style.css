@@ -20,6 +20,7 @@ body {
 
 .hero-logo {
   width: 360px;
+  border-radius: 60px;
   filter: drop-shadow(0 0 30px #c084fc);
 }
 
