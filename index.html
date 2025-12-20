@@ -1,76 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>SA23 | گروه برنامه‌نویسی</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- دکمه موزیک -->
-<div class="music-control" onclick="toggleMusic()">
-  🎵
-</div>
-
-<audio id="bgMusic" loop>
-  <source src="peace-of-mind-calm-ambient-music-341056.mp3" type="audio/mpeg">
-</audio>
-
-<!-- HERO -->
-<header class="hero">
-  <img src="23.png" class="hero-logo">
-  <h1 class="glow-text">SA23</h1>
-  <p>گروه برنامه‌نویسی و توسعه اپلیکیشن‌های موبایل</p>
-</header>
-
-<!-- درباره ما -->
-<section class="section fade-up">
-  <h2>درباره SA23</h2>
-  <p>
-    SA23 یک گروه خلاق در زمینه ساخت نرم‌افزارهای موبایل است
-    که با تمرکز بر طراحی مدرن و تجربه کاربری حرفه‌ای فعالیت می‌کند.
-  </p>
-</section>
-
-<!-- اپ اول -->
-<section class="app-card fade-up">
-  <div class="app-header">
-<div class="logo-placeholder"><img src="logo.png"></div>
-    <h3>قهرمان تو</h3>
-  </div>
-  <div class="buttons">
-      <a href="http://cafebazaar.ir/app/com.SA1.hero"><button>دانلود از بازار</button></a>
-      <a href="https://myket.ir/app/com.SA1.hero"><button>دانلود از مایکت</button></a>
-    </div>
-</section>
-
-<!-- اپ دوم -->
-<section class="app-card fade-up">
-  <div class="app-header">
-          <div class="logo-placeholder"><img src="logo2.png"></div>
-    <h3>پرتوی زمان</h3>
-  </div>
-  <div class="buttons">
-    <a href="https://myket.ir/app/com.parto.Zaman"><button>دانلود از مایکت</button></a>
-
-  </div>
-</section>
-
-<!-- فوتر -->
-<footer>
-  <button onclick="openModal('creator')">درباره سازنده</button>
-  <button onclick="openModal('designer')">طراح سایت</button>
-</footer>
-
-<!-- مودال -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span onclick="closeModal()">×</span>
-    <p id="modalText"></p>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
