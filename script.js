@@ -57,7 +57,7 @@ document.addEventListener("mousemove", e => {
 });
 
 
-const text = "SA23 — سطح آینده ی برنامه نویسی با";
+const text = "SA23 — سطح آینده ی برنامه نویسی ";
 let i = 0;
 
 function typeEffect() {
