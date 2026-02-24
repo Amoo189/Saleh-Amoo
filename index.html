@@ -6,31 +6,29 @@
     <title>SA23</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
     <style>
-        /* CSS عمومی و فونت‌ها */
-        
-        /* === ۲. استایل‌های Preloader === */
+
 
 #preloader {
-    /* پوشاندن کل صفحه */
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff; /* پس‌زمینه سفید برای همخوانی با تم فعلی */
+    background-color: #ffffff; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* اطمینان از اینکه همیشه روی همه چیز باشد */
+    z-index: 9999;
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.7s ease-out, visibility 0.7s ease-out; /* زمان محو شدن بیشتر */
+    transition: opacity 0.7s ease-out, visibility 0.7s ease-out; 
 }
 
 #preloader.hidden {
     opacity: 0;
-    visibility: hidden; /* پس از محو شدن، کاملاً از جریان صفحه خارج می‌شود */
+    visibility: hidden; 
 }
 
 .loader-content {
@@ -39,36 +37,34 @@
     align-items: center;
 }
 
-/* استایل اسپینر (دایره چرخان) */
+
 .spinner {
-    width: 60px; /* کمی بزرگتر */
+    width: 60px; 
     height: 60px;
-    border: 8px solid #e0e0e0; /* خاکستری خیلی روشن */
-    border-top: 8px solid #1a73e8; /* آبی جذاب برای لودر */
+    border: 8px solid #e0e0e0;
+    border-top: 8px solid #1a73e8; 
     border-radius: 50%;
-    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite; /* انیمیشن نرم‌تر */
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite; 
 }
 
-/* متن بارگذاری */
+
 .loading-text {
     margin-top: 20px;
-    font-family: 'Vazirmatn', sans-serif; /* فرض بر استفاده از یک فونت فارسی */
+    font-family: 'Vazirmatn', sans-serif; /
     color: #333;
     font-size: 1.1em;
 }
 
-/* تعریف انیمیشن چرخش */
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-/* === پایان استایل‌های Preloader === */
 
-/* === END OF PRELOADER STYLES === */
 
         :root {
-            --primary-color: #6a0dad; /* بنفش سایبر */
-            --secondary-color: #00ffff; /* فیروزه‌ای نئونی */
+            --primary-color: #6a0dad; 
+            --secondary-color: #00ffff;
             --background-color: #121212;
             --text-color: #f0f0f0;
             --card-bg: #1e1e1e;
@@ -91,7 +87,7 @@
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.7;
-            overflow-x: hidden; /* جلوگیری از اسکرول افقی اضافی */
+            overflow-x: hidden; 
         }
 
         a {
@@ -110,7 +106,7 @@
             margin: 0 auto;
         }
 
-        /* بخش هدر و ناوبری */
+
         header {
             background-color: rgba(18, 18, 18, 0.95);
             padding: 15px 0;
@@ -155,14 +151,12 @@
             width: 100%;
         }
 
-        /* بخش قهرمان (Hero Section) - افکت تایپ اینجا پیاده‌سازی می‌شود */
-        /* بخش قهرمان (Hero Section) - افکت تایپ اینجا پیاده‌سازی می‌شود */
 #hero {
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    background: var(--background-color); /* فرض بر این است که این متغیرها تعریف شده‌اند */
+    background: var(--background-color);
     position: relative;
     overflow: hidden;
 }
@@ -180,17 +174,16 @@ h1 {
 
 #typing-text {
     font-size: 2rem;
-    color: var(--primary-color); /* فرض بر این است که این متغیرها تعریف شده‌اند */
-    /* خط عمودی شبیه کاراکتر تایپ */
-    border-right: 3px solid var(--secondary-color); /* نشانگر چشمک‌زن */
+    color: var(--primary-color); 
+    border-right: 3px solid var(--secondary-color);
     padding-right: 5px;
     white-space: nowrap;
     overflow: hidden;
     margin: 0 auto;
-    width: 0; /* شروع از صفر برای انیمیشن */
+    width: 0; 
 }
 
-/* افکت چشمک‌زن برای نشانگر */
+
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--secondary-color); }
@@ -198,18 +191,18 @@ h1 {
 
 #typing-text.typing {
     animation: 
-        typing-animation 3.5s steps(40, end) forwards, /* انیمیشن تایپ (3.5 ثانیه) */
-        blink-caret 0.75s step-end infinite;          /* انیمیشن چشمک زدن */
+        typing-animation 3.5s steps(40, end) forwards, 
+        blink-caret 0.75s step-end infinite;          
 }
 
-/* تعریف انیمیشن تایپ برای استفاده در بالا */
+
 @keyframes typing-animation {
   from { width: 0; }
   to { width: 100%; }
 }
 
         
-        /* جلوه‌های JS پیشرفته (Parallax/Scroll Effects) */
+       
         .parallax-bg {
             position: absolute;
             top: 0;
@@ -218,7 +211,7 @@ h1 {
             height: 100%;
             background: linear-gradient(45deg, #330033, #000033);
             opacity: 0.1;
-            transition: transform 0.05s linear; /* برای انیمیشن JS */
+            transition: transform 0.05s linear; 
             z-index: 1;
         }
 
@@ -236,7 +229,7 @@ h1 {
             text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
         }
 
-        /* بخش درباره من و خدمات */
+
         .section-content {
             display: flex;
             gap: 40px;
@@ -259,7 +252,6 @@ h1 {
             box-shadow: 0 0 20px rgba(106, 13, 173, 0.7);
         }
 
-        /* کارت‌های خدمات/مهارت‌ها */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -285,7 +277,7 @@ h1 {
             margin-top: 10px;
         }
 
-        /* بخش نمونه کارها (Projects) */
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -324,7 +316,7 @@ h1 {
             color: var(--secondary-color);
         }
 
-        /* بخش تماس */
+
         #contact form {
             max-width: 600px;
             margin: 0 auto;
@@ -371,11 +363,11 @@ h1 {
         }
         
         button[type="submit"]:hover {
-            background-color: #8a2be2; /* کمی روشن‌تر */
+            background-color: #8a2be2;
             transform: translateY(-2px);
         }
 
-        /* بخش فوتر */
+
         footer {
             text-align: center;
             padding: 30px 0;
@@ -389,26 +381,17 @@ h1 {
 </head>
 <body>
 
-    <!-- === ۱. بخش Preloader در بالاترین نقطه === -->
     <div id="preloader">
         <div class="loader-content">
             
-            <!-- می‌توانید یک تصویر یا متن خاص اینجا قرار دهید -->
+
             <div class="spinner"></div>
             <p class="loading-text">در حال بارگذاری...</p>
         </div>
     </div>
-    <!-- === پایان بخش Preloader === -->
-
-    <!-- محتوای اصلی صفحه شما در اینجا شروع می‌شود -->
 
 
-    <!-- ... بقیه محتوای index4.html شما ... -->
 
-
-<!-- ... بقیه محتوای شما از جمله [درباره من](#about) ... -->
-
-    <!-- پیش‌نمایش لوگو موقت (تا زمانی که تصویر تولید شود) -->
     <header>
         <div class="container">
             <nav>
@@ -424,21 +407,20 @@ h1 {
         </div>
     </header>
 
-    <!-- لایه پس‌زمینه پارالاکس (برای جلوه‌های JS) -->
     <div class="parallax-bg" id="parallax-bg"></div>
 
-    <!-- 1. بخش قهرمان (Hero Section) با افکت تایپ -->
+
     <section id="hero">
     <div class="container hero-content">
         <div class="image-area">
-            <!-- تصویر شما ثابت می‌ماند -->
-            <img src="2.png" alt="تصویر توسعه دهنده">
+
+            <img src="2.png" alt="logo">
         </div>
         
-        <!-- این متن ثابت است و نباید تغییر کند -->
+
         <h1>سلام من صالح عمو هستم</h1> 
         
-        <!-- این تگ، محل انیمیشن تایپ است و باید کلاس 'typing' داشته باشد -->
+
         <div id="typing-text" class="typing"></div> 
              
     </div>
@@ -446,24 +428,32 @@ h1 {
 
 
 
-    <!-- 2. بخش درباره من (About) -->
+
     <section id="about" >
         <div class="container">
             <h2>درباره من</h2>
             <div class="section-content">
                 <div class="text-area">
-                    <p>من یک متخصص توسعه نرم‌افزار با شور و اشتیاق فراوان به خلق راهکارهای دیجیتال هستم. تمرکز اصلی من بر روی ساختن محصولاتی با عملکرد بالا، تجربه کاربری (UX) عالی، و کدهای تمیز و قابل نگهداری است. با سال‌ها تجربه در اکوسیستم وب، می‌توانم پروژه‌های شما را از ایده تا استقرار کامل رهبری کنم.</p>
-                    <p style="margin-top: 15px;">از معماری سرور گرفته تا فرانت‌اند تعاملی، من همیشه به دنبال جدیدترین تکنولوژی‌ها برای ارائه بهترین نتیجه ممکن هستم. دانش من شامل فریمورک‌های مدرن، بهینه‌سازی عملکرد، و امنیت است.</p>
-                </div>
+                    <p>سلام! 👋
+
+ما یه تیم هستیم… البته «ما» یعنی من، صالح عمو، مغز متفکر، مهندس، برنامه‌نویس، و گاهی هم پشتیبانی خودم!
+
+وقتی صحبت از فناوری می‌شه، من با HTML و CSS دنیا رو رنگی می‌کنم، با JavaScript بهش جون می‌دم، و با پایتون مثل جادوگرها همه‌چیز رو خودکار انجام می‌دم!
+
+از اون طرف، با C و ++C مثل سامورایی‌ها کد می‌زنم، و با C# جهان‌های مجازی رو توی موتور یونیتی می‌سازم که حتی خودم گاهی توش گم می‌شم 😅
+
+برنامه‌سازی برای من فقط نوشتن کد نیست — یه جور تفریح، یه جور خواب دیدن با چشمان بازه.
+
+من این صفحه رو ساختم تا یادآور بشه که حتی یه نفر هم می‌تونه دنیایی از کد و خلاقیت پشتش داشته باشه.</p>
                 <div class="image-area">
-                    <!-- در اینجا می‌توانید تصویر خود را قرار دهید -->
+         
                     <img src="A.png" alt="تصویر توسعه دهنده">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. بخش خدمات/مهارت‌ها -->
+
     <section id="services" style="background-color: #1e1e1e;">
         <div class="container">
             <h2>توانمندی ها</h2>
@@ -484,7 +474,6 @@ h1 {
         </div>
     </section>
 
-    <!-- 4. بخش نمونه کارها (Portfolio) -->
     <section id="portfolio">
         <div class="container">
             <h2>پروژه ها</h2>
@@ -531,7 +520,7 @@ h1 {
             </div>
     </section>
 
-    <!-- 5. بخش تماس -->
+
     <section id="contact" style="background-color: #1e1e1e;">
         <div class="container">
             <h2>تماس با ما/آزمایشی</h2>
@@ -558,15 +547,11 @@ h1 {
     </footer>
 
     <script>
-        // ==================================================
-        // 1. افکت تایپ (Typing Effect) - "Coolness JS"
-        // ==================================================
 
-// متن‌هایی که می‌خواهید تایپ شوند (کلمه به کلمه)
 const typingStrings = [
     "توسعه‌دهنده وب",
     "برنامه‌نویس Python",
-    "متخصص C++",
+    "متخصص Cpp",
     "برنامه نویس اندروید"
 ];
 
@@ -576,39 +561,39 @@ let stringIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
-const typeSpeed = 100;   // سرعت تایپ اصلی
-const deleteSpeed = 50;  // سرعت حذف اصلی
-const pauseTime = 1500;  // مکث پس از اتمام تایپ یک کلمه
+const typeSpeed = 100;   
+const deleteSpeed = 50;  
+const pauseTime = 1500; 
 
 function handleTyping() {
     const currentString = typingStrings[stringIndex];
 
     if (isDeleting) {
-        // 1. حالت حذف (سریع‌تر)
+       
         typingTextElement.textContent = currentString.substring(0, charIndex - 1);
         charIndex--;
 
         if (charIndex === 0) {
             isDeleting = false;
             stringIndex = (stringIndex + 1) % typingStrings.length;
-            // بعد از حذف کامل، مکث کوتاه و شروع تایپ مجدد
+            
             setTimeout(handleTyping, pauseTime); 
         } else {
-            // ادامه حذف
+           
             setTimeout(handleTyping, deleteSpeed);
         }
     } else {
-        // 2. حالت تایپ (کندتر)
+       
         typingTextElement.textContent = currentString.substring(0, charIndex + 1);
         charIndex++;
 
         if (charIndex === currentString.length) {
-            // رسیدن به انتهای کلمه: مکث و شروع حذف
+             
             isDeleting = true;
-            // مکث طولانی‌تر قبل از شروع حذف
+            
             setTimeout(handleTyping, pauseTime); 
         } else {
-            // ادامه تایپ
+            
             setTimeout(handleTyping, typeSpeed);
         }
     }
@@ -616,35 +601,33 @@ function handleTyping() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (typingTextElement) {
-        // اطمینان از فعال بودن انیمیشن چشمک‌زن CSS
+   
         typingTextElement.classList.add('typing'); 
         
-        // شروع فرآیند تایپ بعد از یک مکث کوتاه
+    
         setTimeout(handleTyping, 500); 
     }
 });
 
 
 
-        // ==================================================
-        // 2. جلوه‌های JS پیشرفته (Parallax Scroll Effect)
-        // ==================================================
+       
         const parallaxBg = document.getElementById('parallax-bg');
 
         window.addEventListener('scroll', () => {
-            // پارالاکس برای پس‌زمینه تیره
+            
             const scrollPosition = window.scrollY;
             
-            // حرکت دادن پس‌زمینه با سرعت کمتر از اسکرول
+            
             const moveY = scrollPosition * 0.2; 
             parallaxBg.style.transform = `translateY(${moveY}px)`;
         });
         
-        // انیمیشن کارت‌ها هنگام اسکرول (Fade-in on Scroll)
+        
         const observerOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.1 // 10% از المان باید در صفحه باشد تا انیمیشن فعال شود
+            threshold: 0.1 
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
@@ -652,76 +635,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target); // توقف مشاهده بعد از فعال شدن
+                    observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.skill-card, .project-card').forEach(card => {
-            // استایل اولیه برای مخفی کردن و بالا بردن المان‌ها
+            
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
             observer.observe(card);
         });
         
-        // ==================================================
-        // 3. مدیریت فرم تماس (جلوگیری از ارسال واقعی)
-        // ==================================================
+      
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // نمایش یک پیام موفقیت به جای ارسال واقعی
+            
             alert('پیام شما با موفقیت ثبت شد. (این یک فرم نمایشی است و ارسال نمی‌شود)');
             
-            // ریست کردن فرم
+            
             this.reset();
         });
 
-// ===================================================
-// === بخش جدید: مدیریت Preloader ===
-// ===================================================
 
 document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     
-    // اگر Preloader در HTML تعریف شده باشد (که در مرحله قبل آن را اضافه کردیم)
+
     if (preloader) {
         
-        // ۱. تابع اصلی برای مخفی کردن Preloader
+        
         const hidePreloader = () => {
-            // افزودن کلاس 'hidden' که باعث می‌شود opacity به 0 و visibility به hidden تغییر کند (طبق CSS)
+            
             preloader.classList.add('hidden');
         };
 
-        // ۲. شنونده برای رویداد 'load'
-        // این رویداد زمانی فعال می‌شود که تمام محتوای صفحه، از جمله تصاویر (مانند 2.png، qmos.jpg و...) بارگذاری شده باشند.
+        
         window.addEventListener('load', hidePreloader);
 
-        // ۳. شنونده برای پایان انیمیشن محو شدن (Transition End)
-        // این کار تضمین می‌کند که پس از اتمام افکت محو شدن 0.7 ثانیه‌ای، عنصر Preloader از صفحه حذف شود.
+      
         preloader.addEventListener('transitionend', function(event) {
-            // بررسی می‌کنیم که آیا رویداد مربوط به خاصیت opacity بوده و Preloader در حالت مخفی است
+           
             if (event.propertyName === 'opacity' && preloader.classList.contains('hidden')) {
                 preloader.style.display = 'none';
             }
         });
     }
     
-    // ===================================================
-    // === ادغام با منطق قبلی (انیمیشن تایپ و ترجمه) ===
-    // ===================================================
-    
-    // **نکته مهم:** اگر منطق انیمیشن تایپ (که شامل typingStrings و تابع type() بود)
-    // را هنوز در اینجا اضافه نکرده‌اید، باید آن را در همینجا (پس از تعریف 'preloader') قرار دهید.
-    // با این ساختار، انیمیشن تایپ شما **بلافاصله پس از بارگذاری اولیه DOM** شروع می‌شود،
-    // اما انیمیشن Preloader روی آن قرار می‌گیرد تا زمانی که همه تصاویر لود شوند.
-    
-    // ***کد انیمیشن تایپ شما باید در این قسمت قرار گیرد***
-    // (به عنوان مثال، فراخوانی تابع اصلی انیمیشن تایپ)
-    // handleTypingInitialization(); 
-    
-    // ***کد مدیریت دکمه ترجمه***
+   
     const toggleButton = document.getElementById('language-toggle');
     if (toggleButton) {
         toggleButton.addEventListener('click', () => {
