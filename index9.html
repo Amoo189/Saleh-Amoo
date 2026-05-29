@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA23</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0f24;
+            --glass: rgba(255,255,255,0.08);
+            --border-glass: rgba(255,255,255,0.25);
+            --neon1: #00eaff;
+            --neon2: #7b2cff;
+            --text: #e6e6e6;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Vazirmatn',sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height:1.8;
+            overflow-x:hidden;
+        }
+
+        a{ color:var(--neon1); text-decoration:none; transition:.3s; }
+        a:hover{ color:var(--neon2); }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:0 auto;
+        }
+
+        /* BACKGROUND ANIMATION */
+        body::before{
+            content:'';
+            position:fixed;
+            left:0; top:0;
+            width:100%; height:100%;
+            background: radial-gradient(circle at 20% 30%,rgba(0,255,255,0.18),transparent),
+                        radial-gradient(circle at 80% 70%,rgba(138,43,226,0.2),transparent);
+            z-index:-1;
+            animation: bgMove 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgMove{
+            0%{ transform:translate(0,0); }
+            100%{ transform:translate(0,-30px); }
+        }
+
+        /* HEADER */
+        header{
+            position:sticky;
+            top:0;
+            backdrop-filter:blur(15px);
+            background: var(--glass);
+            border-bottom:1px solid var(--border-glass);
+            padding:15px 0;
+            z-index:100;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo{
+            font-size:2rem;
+            font-weight:900;
+            color:var(--neon1);
+            text-shadow:0 0 12px var(--neon1);
+        }
+
+        .nav-links a{
+            margin-left:20px;
+            font-weight:500;
+        }
+
+        /* HERO */
+        #hero{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            position:relative;
+        }
+
+        .hero-box{
+            background:var(--glass);
+            border:1px solid var(--border-glass);
+            padding:40px;
+            border-radius:20px;
+            backdrop-filter:blur(15px);
+            animation:fadeIn 1.4s ease;
+        }
+
+        @keyframes fadeIn{
+            from{opacity:0; transform:translateY(30px);}
+            to{opacity:1; transform:translateY(0);}
+        }
+
+        #typing-text{
+            font-size:1.8rem;
+            color:var(--neon2);
+            margin-top:10px;
+            border-right:3px solid var(--neon1);
+            white-space:nowrap;
+            overflow:hidden;
+            width:0;
+        }
+
+        /* ABOUT */
+        section{
+            padding:100px 0;
+        }
+
+        h2{
+            text-align:center;
+            font-size:2.6rem;
+            color:var(--neon1);
+            text-shadow:0 0 8px var(--neon1);
+            margin-bottom:60px;
+        }
+
+        .sec-flex{
+            display:flex;
+            gap:40px;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .about-text, .about-img{
+            flex:1;
+        }
+
+        .about-img img{
+            width:100%;
+            border-radius:15px;
+            box-shadow:0 0 25px rgba(0,255,255,0.4);
+        }
+
+        /* SKILLS */
+        .skills-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:25px;
+        }
+
+        .skill-card{
+            padding:20px;
+            background:var(--glass);
+            border:1px solid var(--border-glass);
+            border-radius:12px;
+            text-align:center;
+            transition:.3s;
+        }
+
+        .skill-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 0 20px rgba(0,255,255,0.4);
+        }
+
+        /* PROJECTS */
+        .projects-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+            gap:30px;
+        }
+
+        .project-card{
+            background:var(--glass);
+            border:1px solid var(--border-glass);
+            border-radius:12px;
+            overflow:hidden;
+            transition:.3s;
+        }
+
+        .project-card img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+        }
+
+        .project-card:hover{
+            transform:scale(1.03);
+            box-shadow:0 0 20px rgba(138,43,226,0.4);
+        }
+
+        .project-info{
+            padding:15px;
+        }
+
+        /* CONTACT */
+        #contact{
+            text-align:center;
+        }
+
+        /* FOOTER */
+        footer{
+            text-align:center;
+            padding:30px 0;
+            opacity:0.7;
+        }
+
+        /* SCROLL ANIMATION */
+        .hidden{
+            opacity:0;
+            transform:translateY(25px);
+            transition:1s;
+        }
+
+        .visible{
+            opacity:1;
+            transform:translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">SA23</div>
+            <div class="nav-links">
+                <a href="#about">درباره من</a>
+                <a href="#services">توانمندی‌ها</a>
+                <a href="#portfolio">پروژه‌ها</a>
+                <a href="#contact">انتقادات</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div class="hero-box">
+        <img src="4.png" style="width:170px;border-radius:50%;box-shadow:0 0 25px var(--neon1);">
+        <h1 style="margin-top:20px;font-size:2.8rem;">سلام من صالح عمو هستم</h1>
+        <div id="typing-text"></div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>درباره من</h2>
+    <div class="container sec-flex">
+        <div class="about-text hidden">
+            <p>سلام! 👋ما یه تیم هستیم… البته «ما» یعنی من صالح عمو، مغز متفکر، مهندس، برنامه‌نویس، و گاهی هم پشتیبانی خودم!وقتی صحبت از فناوری می‌شه، من با HTML و CSS دنیا رو رنگی می‌کنم، با JavaScript بهش جون می‌دم، و با پایتون مثل جادوگرها همه‌چیز رو خودکار انجام می‌دم!از اون طرف، با C و ++C مثل سامورایی‌ها کد می‌زنم، و با C# جهان‌های مجازی رو توی موتور یونیتی می‌سازم که حتی خودم گاهی توش گم می‌شم 😅برنامه‌سازی برای من فقط نوشتن کد نیست — یه جور تفریح، یه جور خواب دیدن با چشمان بازه.من این صفحه رو ساختم تا یادآور بشه که حتی یه نفر هم می‌تونه دنیایی از کد و خلاقیت پشتش داشته باشه.</p>
+            <p style="margin-top:15px;">موفق باشید...SA23</p>
+        </div>
+        <div class="about-img hidden">
+            <img src="A.png">
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>توانمندی‌ها</h2>
+    <div class="container skills-grid">
+        <div class="skill-card hidden"><h4>Web Developer</h4><p>JavaScript, HTML5, CSS</p></div>
+        <div class="skill-card hidden"><h4>Programing Language</h4><p>C++, C, C#, Python</p></div>
+        <div class="skill-card hidden"><h4>Android Programing</h4><p>Unity Engine(v6)</p></div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>پروژه‌ها</h2>
+
+    <div class="container projects-grid">
+
+        <a href="https://amoo189.github.io/Saleh-Amoo/index2">
+            <div class="project-card hidden">
+                <img src="7.png">
+                <div class="project-info">
+                    <h4>SA23</h4>
+                    <p>یکی دیگر از سایت های رسمی SA23</p>
+                </div>
+            </div>
+        </a>
+
+        
+       
+
+
+        <a href="https://amoo189.github.io/QMOS">
+            <div class="project-card hidden">
+                <img src="qmos.jpg">
+                <div class="project-info">
+                    <h4>سیستم عامل کوانتومی تحت وب</h4>
+                    <p>سیستم عامل تحت وب کوانتومی با برنامه‌های تعاملی</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://amoo189.github.io/QMOSp">
+            <div class="project-card hidden">
+                <img src="qmos1.jpg">
+                <div class="project-info">
+                    <h4>سیستم عامل تحت وب نسخه پایه</h4>
+                    <p>سیستم عامل تحت وب با برنامه‌های پایه</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://myket.ir/app/com.SA1.hero">
+            <div class="project-card hidden">
+                <img src="logo.png">
+                <div class="project-info">
+                    <h4>قهرمان تو</h4>
+                    <p>برنامه آموزشی درباره قهرمانان واقعی</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://myket.ir/app/com.parto.Zaman">
+            <div class="project-card hidden">
+                <img src="logo2.png">
+                <div class="project-info">
+                    <h4>پرتوی زمان</h4>
+                    <p>برنامه آموزشی درباره سوره عصر</p>
+                </div>
+            </div>
+        </a>
+      
+       
+        <a href="https://github.com/Amoo189">
+            <div class="project-card hidden">
+                <img src="git.png">
+                <div class="project-info">
+                    <h4>گیت هاب صالح عمو</h4>
+                    <p>شامل پروژه‌های صالح عمو</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>ارتباط با من</h2>
+<iframe id="IFRAME_w0e2d9aece" title="%D9%86%D8%B8%D8%B1+%D8%B3%D9%86%D8%AC%DB%8C+%D8%B3%D8%A7%DB%8C%D8%AA+SA23" style="border: none;height:100%;width:100%" width="100%" height="1000" src="https://iframe.digiform.ir/w0e2d9aece?theme=white"></iframe>
+</section>
+
+<footer>
+    © 2026 SA23 صالح عمو
+</footer>
+
+<script>
+    /* Typing Effect */
+    const typingStrings = [
+        "توسعه‌دهنده وب",
+        "برنامه‌نویس Python",
+        "برنامه نویس ++C",
+        "برنامه نویس اندروید"
+    ];
+
+    let tIndex = 0, cIndex = 0, deleting = false;
+    const tElem = document.getElementById("typing-text");
+
+    function typeLoop(){
+        let text = typingStrings[tIndex];
+
+        if(!deleting){
+            cIndex++;
+            tElem.style.width = cIndex+"ch";
+        }else{
+            cIndex--;
+            tElem.style.width = cIndex+"ch";
+        }
+
+        tElem.textContent = text.substring(0,cIndex);
+
+        if(cIndex === text.length){
+            deleting = true;
+            setTimeout(typeLoop,1200);
+            return;
+        }
+
+        if(cIndex === 0){
+            deleting = false;
+            tIndex = (tIndex + 1) % typingStrings.length;
+        }
+
+        setTimeout(typeLoop, deleting ? 60 : 100);
+    }
+
+    setTimeout(typeLoop, 400);
+
+    /* Scroll reveal */
+    const reveal = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                e.target.classList.add("visible");
+                reveal.unobserve(e.target);
+            }
+        });
+    });
+
+    document.querySelectorAll(".hidden").forEach(el=>{
+        reveal.observe(el);
+    });
+</script>
+
+</body>
+</html>
