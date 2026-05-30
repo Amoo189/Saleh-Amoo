@@ -392,18 +392,53 @@ h1 {
         }
 
     </style>
+     نمایش داده شود، استفاده از CSS Media Queries دقیق‌ترین راه است. با این روش، ما می‌توانیم در کامپیوتر فضای بیشتری بدهیم و در موبایل اجازه دهیم فرم به‌صورت بهینه نمایش داده شود.
+
+کد زیر را جایگزین کد قبلی کنید:
+
+
+نمایش کد
+
+<style>
+  .iframe-container {
+    width: 100%;
+    max-width: 800px; /* برای جلوگیری از خیلی بزرگ شدن در دسکتاپ */
+    margin: 0 auto;   /* وسط‌چین کردن */
+  }
+
+  .responsive-iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
+
+  /* تنظیمات برای کامپیوتر */
+  @media (min-width: 768px) {
+    .responsive-iframe {
+      height: 600px; /* ارتفاع ثابت برای دسکتاپ */
+    }
+  }
+
+  /* تنظیمات برای موبایل */
+  @media (max-width: 767px) {
+    .responsive-iframe {
+      height: 80vh; /* ۸۰ درصد ارتفاع صفحه نمایش موبایل */
+    }
+  }
+</style>
+
 </head>
 <body>
 
     <!-- === ۱. بخش Preloader در بالاترین نقطه === -->
-    <div id="preloader">
-        <div class="loader-content">
+   <!-- <div id="preloader">
+        <div class="loader-content">-->
             
             <!-- می‌توانید یک تصویر یا متن خاص اینجا قرار دهید -->
-            <div class="spinner"></div>
+            <!--<div class="spinner"></div>
             <p class="loading-text">در حال بارگزاری</p>
         </div>
-    </div>
+    </div>-->
        <header>
         <div class="container">
             <nav>
@@ -552,7 +587,15 @@ h1 {
 
     <!-- 5. بخش تماس -->
     <section id="contact" style="background-color: #1e1e1e;">
-        <div class="container">
+        <div class="iframe-container">
+  <iframe 
+    id="IFRAME_w0e2d9aece" 
+    class="responsive-iframe"
+    title="نظرسنجی سایت SA23" 
+    src="https://iframe.digiform.ir/w0e2d9aece?theme=black">
+  </iframe>
+        </div>
+       <!-- <div class="container">
             <h2>تماس با ما/آزمایشی</h2>
             <form id="contact-form">
                 <div class="form-group">
@@ -569,7 +612,7 @@ h1 {
                 </div>
                 <button type="submit">ارسال پیام</button>
             </form>
-        </div>
+        </div>-->
     </section>
 
     <footer>
