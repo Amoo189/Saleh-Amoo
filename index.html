@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+  <meta name="description" content="پورتفولیو شخصی صالح عمو (SA23) - متخصص برنامه‌نویسی پایتون، توسعه‌دهنده وب، سی‌پلاس‌پلاس و بازی‌سازی در یونیتی.">
+  <meta name="keywords" content="صالح عمو, Saleh Amoo, برنامه‌نویسی, توسعه‌دهنده وب, پایتون, بازی‌سازی, QMOS, طراحی سایت">
+  <link rel="canonical" href="https://amoo189.github.io/Saleh-Amoo">
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="c4cJm7Oxc8tFf9vFlvJlrD-GeovSYK3ynJdoCrNfcjY" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -634,6 +637,7 @@ footer {
   z-index: calc(var(--z-ai) + 2);
 }
 #sa10-keybox {
+  position: relative;
   width: 420px;
   max-width: 92%;
   padding: 30px;
@@ -758,6 +762,29 @@ footer {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+.close-guide-btn {
+    position: absolute;
+    top: 15px;   
+    right: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 18px;
+    z-index: 10;
+}
+.close-guide-btn:hover {
+    background: var(--danger, #ff4d6d);
+    border-color: var(--danger, #ff4d6d);
+    transform: rotate(90deg);
+}
   </style>
 </head>
 <body>
@@ -788,6 +815,7 @@ footer {
 </div>
 <div id="sa10-overlay">
   <div id="sa10-keybox">
+    <button class="close-guide-btn" onclick="document.getElementById('sa10-overlay').style.display='none'">×</button>
     <div class="ai-guide-header">
       <div class="ai-guide-icon"><i class="fa-solid fa-key"></i></div>
       <h3>فعال‌سازی دستیار هوشمند</h3>
